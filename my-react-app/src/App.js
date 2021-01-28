@@ -1,6 +1,4 @@
 import React from 'react';
-import * as Yup from 'yup'; // lambda suggestion for 'less bugginess'
-import Axios from 'axios';
 import Form from './Form';
 import './App.css';
 
