@@ -112,10 +112,12 @@ export default function Form() {
         <div>{errors.tos}</div>
       </div>
       <h3>Users:</h3>
+      <div className='users-div' style={{ border: '1px solid crimson' }}>
       {
+        // hindsight should've added another component here and added proper styling
         users.map(user => {
           return (
-            <div className='users-div' style={{ border: '1px solid crimson' }}>
+            <div key={user.username /* hack to get 'unique key' warning to go away; make sure users can't enter multiple of same key though, as that can be potentially even more problematic */}>
               <h4>User: {user.username}</h4>
               <h4>Pass: {user.password}</h4>
               <h4>Email: {user.email}</h4>
@@ -123,6 +125,7 @@ export default function Form() {
           )
         })
       }
+      </div>
     </div>
   )
 }
